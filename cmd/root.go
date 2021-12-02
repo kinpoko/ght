@@ -27,8 +27,8 @@ var rootCmd = &cobra.Command{
 		}
 
 		for _, i := range res {
-			color.Blue(i.Url)
-			color.Green(i.Name)
+			color.HiCyan(i.Url)
+			color.HiGreen(i.Name)
 			fmt.Println(i.Description)
 			fmt.Println(i.Language)
 			fmt.Print("\n")

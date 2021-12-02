@@ -44,5 +44,5 @@ func Execute() {
 }
 
 func init() {
-	rootCmd.Flags().StringP("language", "l", "", "programming anguage")
+	rootCmd.Flags().StringP("language", "l", "", "programming language")
 }

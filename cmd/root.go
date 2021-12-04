@@ -2,6 +2,7 @@ package cmd
 
 import (
 	"fmt"
+	"strings"
 
 	"github.com/fatih/color"
 	"github.com/kinpoko/ght/ghtrend"
@@ -9,17 +10,15 @@ import (
 )
 
 var rootCmd = &cobra.Command{
-	Use:   "ght",
+	Use:   "ght [programming language]",
 	Short: "GitHub Trend",
 	Long:  ``,
 
+	Args: cobra.MaximumNArgs(1),
+
 	RunE: func(cmd *cobra.Command, args []string) error {
-		language, err := cmd.Flags().GetString("language")
 
-		if err != nil {
-			return err
-		}
-
+		language := strings.Join(args, "")
 		res, err := ghtrend.Scraping(language)
 
 		if err != nil {
@@ -44,5 +43,4 @@ func Execute() {
 }
 
 func init() {
-	rootCmd.Flags().StringP("language", "l", "", "programming language")
 }

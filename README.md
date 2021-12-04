@@ -15,9 +15,8 @@ ght -h
 GitHub Trend
 
 Usage:
-  ght [flags]
+  ght [programming language] [flags]
 
 Flags:
-  -h, --help              help for ght
-  -l, --language string   programming language
+  -h, --help   help for ght
 ```
